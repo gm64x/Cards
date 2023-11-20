@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="br.gm.cards.FinishController">
+   <children>
+      <Text layoutX="102.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congratulations you have finished your study session!!" textAlignment="CENTER" wrappingWidth="396.76953125">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="closeButton" layoutX="269.0" layoutY="386.0" mnemonicParsing="false" onAction="#close" text="CLOSE" />
+      <Button fx:id="returnHomeButton" layoutX="31.0" layoutY="38.0" mnemonicParsing="false" onAction="#returnHome" text="RETURN TO HOME" />
+   </children>
+</AnchorPane>

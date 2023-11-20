@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.gm.cards.PlayController">
+   <children>
+      <Button fx:id="exitButton" layoutX="41.0" layoutY="43.0" mnemonicParsing="false" onAction="#exit" text="Back to Home">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="changeText" layoutX="61.0" layoutY="138.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="JUSTIFY" wrappingWidth="498.13671875">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Button fx:id="backButton" disable="true" layoutX="58.0" layoutY="518.0" mnemonicParsing="false" onAction="#back" prefHeight="34.0" prefWidth="205.0" text="BACK" />
+      <Button fx:id="nextButton" layoutX="357.0" layoutY="518.0" mnemonicParsing="false" onAction="#next" prefHeight="34.0" prefWidth="197.0" text="NEXT" />
+      <GridPane alignment="CENTER" layoutX="212.0" layoutY="43.0" prefHeight="40.0" prefWidth="203.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="16.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="tipText" fill="#00000070" strokeType="OUTSIDE" strokeWidth="0.0" text="TIP" textAlignment="CENTER" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Text fx:id="numberText" strokeType="OUTSIDE" strokeWidth="0.0" text="To Start click on the NEXT Button" textAlignment="CENTER" />
+               </children>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
