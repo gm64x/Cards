@@ -1,15 +1,13 @@
-package br.gm325.cards;
+package br.gm.cards;
 
-import br.gm325.cards.model.Deck;
+import java.io.IOException;
+
+import br.gm.cards.model.Deck;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import javafx.event.ActionEvent;
 
 /**
  * JavaFX App

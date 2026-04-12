@@ -1,23 +1,20 @@
-package br.gm325.cards;
+package br.gm.cards;
 
-import static br.gm325.cards.App.deck;
 import java.io.IOException;
-import br.gm325.cards.model.Card;
+
+import static br.gm.cards.App.deck;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class FristOpenController {

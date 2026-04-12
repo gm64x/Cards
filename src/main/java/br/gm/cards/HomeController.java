@@ -1,10 +1,9 @@
-package br.gm325.cards;
+package br.gm.cards;
 
-import static br.gm325.cards.App.deck;
-import static br.gm325.cards.FristOpenController.changeScene;
 import java.io.IOException;
 
-import br.gm325.cards.model.Card;
+import static br.gm.cards.App.deck;
+import static br.gm.cards.FristOpenController.changeScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

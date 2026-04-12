@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="br.gm325.cards.FinishController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="br.gm.cards.FinishController">
    <children>
       <Text layoutX="102.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congratulations you have finished your study session!!" textAlignment="CENTER" wrappingWidth="396.76953125">
          <font>

@@ -1,4 +1,4 @@
-package br.gm325.cards.model;
+package br.gm.cards.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -82,7 +82,7 @@ public class Deck {
     }
     
     public void removeAll(){
-        cartas.removeAll(cartas);
+        cartas.clear();
     }
     
     
@@ -129,9 +129,8 @@ public class Deck {
     }
     
     public String getResposta(int index){
-        
-        if(shuffled){
-            return cartasShuffle.get(index).getPergunta();
+        if (shuffled) {
+            return cartasShuffle.get(index).getResposta();
         } else {
             return cartas.get(index).getResposta();
         }

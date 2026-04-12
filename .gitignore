@@ -42,7 +42,10 @@ replay_pid*
 *.bak
 *.swp
 *.swo
+*.class
 
 # OS
 .DS_Store
 Thumbs.db
+.agent/*
+.agent
