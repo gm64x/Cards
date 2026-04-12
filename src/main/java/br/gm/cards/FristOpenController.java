@@ -5,7 +5,6 @@ import java.io.IOException;
 import static br.gm.cards.App.deck;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -98,10 +97,9 @@ public class FristOpenController {
         Button addButton = new Button("Remove");
 
         addButton.setOnAction((ActionEvent event) -> {
-            deck.remove(Card(questionTextField.getText(), answerTextField.getText()));
+            deck.remove(questionTextField.getText(), answerTextField.getText());
             System.out.println(deck.size());
             isAdded = true;
-
             dialog.close();
 
         });
@@ -116,7 +114,8 @@ public class FristOpenController {
 
     public static void changeScene(ActionEvent event, String fxml) throws IOException {
         try {
-            Parent root = FXMLLoader.load(FristOpenController.class.getResource(fxml));
+            String base = fxml.endsWith(".fxml") ? fxml.substring(0, fxml.length() - 5) : fxml;
+            Parent root = App.loadFXML(base);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -131,9 +130,6 @@ public class FristOpenController {
 
     }
 
-    private Card Card(String text, String text0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
 }

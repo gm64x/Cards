@@ -86,8 +86,9 @@ public class PlayController {
         System.out.println("page: " + page);
         System.out.println("index: " + index);
 
-        if (page == deck.size()) {
+        if (page >= deck.size()) {
             changeScene(event, "finish.fxml");
+            return;
         }
 
         if (allReadyShowQuestion) {

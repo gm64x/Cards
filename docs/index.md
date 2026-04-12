@@ -16,7 +16,7 @@ Follow these documents for details:
 - [API Reference](api-reference.md)
 - [Design Decisions](design-decisions.md)
 - Modules
-  - [App](modules/app.md)
+  - [App](modules/App.md)
   - [Controllers](modules/controllers.md)
   - [Model](modules/model.md)
 - [Contributing](contributing.md)

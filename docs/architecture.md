@@ -18,7 +18,7 @@ Runtime flow (observable)
 Data flow
 
 - A single, global `Deck` instance is exposed as `public static Deck deck` on `App` and is accessed by controllers via static imports (observed in controller source files). Controllers mutate and read the `Deck` to add, remove, shuffle, and retrieve card content.
-- `Deck` stores card data in three lists: `cartas` (primary), `cartasShuffle` (shuffled view), and `cartasEasy` (auxiliary copy used during difficulty changes). The `shuffled` boolean controls whether getters use `cartas` or `cartasShuffle`.
+- `Deck` stores card data in three lists: `cartas` (primary — cards), `cartasShuffle` (shuffled view), and `cartasEasy` (auxiliary copy used during difficulty changes). The `shuffled` boolean controls whether getters use `cartas` or `cartasShuffle`.
 
 Resource / controller mapping
 

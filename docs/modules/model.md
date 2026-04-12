@@ -4,7 +4,7 @@ This module describes `Card` and `Deck` types implemented under `src/main/java/b
 
 Card
 
-- Fields: `private String pergunta`, `private String resposta`.
+- Fields: `private String pergunta` (question), `private String resposta` (answer).
 - Constructors: `Card()` and `Card(String pergunta, String resposta)`.
 - Accessors: `getPergunta()`, `setPergunta(String)`, `getResposta()`, `setResposta(String)`.
 - Stringification: `toString()` and `toString(int index)` return a literal `Carta{...}` representation.
@@ -12,11 +12,11 @@ Card
 Deck
 
 - Internal state (observable):
-  - `ArrayList<Card> cartas` — primary list of cards.
-  - `ArrayList<Card> cartasEasy` — auxiliary list used during difficulty changes.
-  - `ArrayList<Card> cartasShuffle` — cloned list used when `shuffle()` is executed.
+  - `ArrayList<Card> cartas` — primary list of cards (`cartas` = cards).
+  - `ArrayList<Card> cartasEasy` — auxiliary list used during difficulty changes (`cartasEasy` = easy/auxiliary cards).
+  - `ArrayList<Card> cartasShuffle` — cloned list used when `shuffle()` is executed (`cartasShuffle` = shuffled view).
   - `boolean shuffled` — indicates whether the shuffled list should be used for reads.
-  - `int dificuldade` — numeric difficulty flag.
+  - `int dificuldade` — numeric difficulty flag (`dificuldade` = difficulty).
 
 - Public methods (signatures and behavior):
   - `isShuffled()` — returns the `shuffled` flag.
@@ -30,6 +30,5 @@ Deck
   - `clearShuffled()` — clears `cartasShuffle` and sets `shuffled = false`.
   - `getPergunta(int)` / `getResposta(int)` — when `shuffled` is true they read from `cartasShuffle`, otherwise from `cartas`.
 
-Known issues (observable)
-
-- `getResposta(int)` returns the question (`getPergunta`) when `shuffled` is true; this behavior is visible in source and is documented in the repository `README.md`.
+  Known issues (observable)
+  - Previously, `getResposta(int)` returned the question (`getPergunta`) when `shuffled` was true; this behavior was observed in source and has been corrected locally to return the answer from the shuffled view.
