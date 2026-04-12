@@ -1,10 +1,15 @@
+<div align="center">
+  
 # Cards
 
-**Archived — this repository is archived.** This was a college project and is no longer actively maintained. The code is provided "as‑is" for reference or fork; no support will be provided. See `LICENSE` (GPLv3) for terms.
+[![Made With Java](https://img.shields.io/badge/Java-crimson?style=for-the-badge&label=Made%20With&labelColor=black)](https://www.java.com/)
 
-Short description
+</div>
 
-- Simple flashcard app written in Java (JavaFX). Focused on a single deck of cards (question/answer).
+> [!NOTE]
+> **Archived — this repository is archived.** This was a college project and is no longer actively maintained. The code is provided "as‑is" for reference or fork; no support will be provided. See `LICENSE` (GPLv3) for terms.
+
+Simple flashcard app written in Java (JavaFX). Focused on a single deck of cards (question/answer).
 
 Implemented features
 
