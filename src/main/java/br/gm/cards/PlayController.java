@@ -11,10 +11,8 @@ import javafx.scene.text.Text;
 
 public class PlayController {
 
-    boolean allReadyShowQuestion = false;
-    int page = 0;
-    int index = 0;
-    static boolean fristRun = true;
+    private boolean showingQuestion = true;
+    private int currentCardIndex = 0;
 
     @FXML
     private Button backButton;
@@ -36,44 +34,29 @@ public class PlayController {
 
     @FXML
     void back(ActionEvent event) {
-
-        System.out.println("page: " + page);
-        System.out.println("index: " + index);
-
-        if (index >= 1) {
-            page--;
-            index--;
-            allReadyShowQuestion = !allReadyShowQuestion;
-
-            if (allReadyShowQuestion) {
-                backButton.setDisable(false);
-                changeText.setText(deck.getPergunta(page));
-                numberText.setText(page + " / " + deck.size());
-            } else {
-                backButton.setDisable(false);
-                changeText.setText(deck.getResposta(index));
-                numberText.setText((page + 1) + " / " + deck.size());
+        if (showingQuestion) {
+            if (currentCardIndex == 0) {
+                backButton.setDisable(true);
+                return;
             }
-        } else if (index < 0) {
-            backButton.setDisable(true);
+
+            currentCardIndex--;
+            showingQuestion = false;
+        } else {
+            showingQuestion = true;
         }
+
+        updateCardView();
     }
 
     @FXML
     public void initialize() {
-
-        System.out.println("page: " + page);
-        System.out.println("index: " + index);
-
         tipText.setText("Number of Cards");
-        numberText.setText(page + " / " + deck.size());
+        currentCardIndex = 0;
+        showingQuestion = true;
 
-        changeText.setText(deck.getPergunta(page));
+        updateCardView();
         changeText.setOpacity(1);
-
-        allReadyShowQuestion = true;
-
-        backButton.setDisable(true);
     }
 
     @FXML
@@ -83,26 +66,30 @@ public class PlayController {
 
     @FXML
     void next(ActionEvent event) throws IOException {
-        System.out.println("page: " + page);
-        System.out.println("index: " + index);
+        if (showingQuestion) {
+            showingQuestion = false;
+            updateCardView();
+            return;
+        }
 
-        if (page >= deck.size()) {
+        currentCardIndex++;
+        if (currentCardIndex >= deck.size()) {
             changeScene(event, "finish.fxml");
             return;
         }
 
-        if (allReadyShowQuestion) {
-            backButton.setDisable(false);
-            changeText.setText(deck.getResposta(index));
-            numberText.setText((page + 1) + " / " + deck.size());
-            index++;
-            page++;
-            allReadyShowQuestion = false;
+        showingQuestion = true;
+        updateCardView();
+    }
+
+    private void updateCardView() {
+        backButton.setDisable(currentCardIndex == 0 && showingQuestion);
+        numberText.setText((currentCardIndex + 1) + " / " + deck.size());
+
+        if (showingQuestion) {
+            changeText.setText(deck.getPergunta(currentCardIndex));
         } else {
-            backButton.setDisable(false);
-            changeText.setText(deck.getPergunta(page));
-            numberText.setText(page + " / " + deck.size());
-            allReadyShowQuestion = true;
+            changeText.setText(deck.getResposta(currentCardIndex));
         }
     }
 

@@ -133,7 +133,9 @@ public class HomeController {
         dialog.setTitle("Add Card");
         dialog.setHeaderText("Add a card to your deck");
 
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        if (!dialog.getDialogPane().getButtonTypes().contains(ButtonType.CANCEL)) {
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        }
         dialog.getDialogPane().setContent(createAddCardDialog());
         dialog.showAndWait();
     }
@@ -166,7 +168,9 @@ public class HomeController {
         dialog.setTitle("Remove Card");
         dialog.setHeaderText("Remove a card from your deck");
 
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        if (!dialog.getDialogPane().getButtonTypes().contains(ButtonType.CANCEL)) {
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        }
         dialog.getDialogPane().setContent(createRemoveCardDialog());
         dialog.showAndWait();
     }
