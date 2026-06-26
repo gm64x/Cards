@@ -66,6 +66,7 @@ public class FinishController {
         confirmButton.setOnAction((ActionEvent event) -> {
 
             if (yes.isSelected()) {
+                deck.clearShuffled();
                 deck.removeAll();
             } else if (no.isSelected()) {
                 deck.shuffle();
